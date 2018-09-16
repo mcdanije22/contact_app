@@ -2,10 +2,10 @@ import React from 'react';
  
 const SideBar = ({toggle}) =>{
 const hide = {
-  display: toggle?'block':'none'
-}
+  display: toggle?'none':'block',
+} 
     return (
-        <div className ='sideBar' style={hide}>
+        <div className ='sideBar' style={hide} >
           <ul>
         <a href = "#" id = "a"> <li> A </li> </a>
         <a href = "#" id = "b"> <li> B </li> </a>

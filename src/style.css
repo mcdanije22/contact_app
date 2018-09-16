@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif; 
     max-width:100vw;
+    
   }
 
 /* side bar */
@@ -12,6 +13,13 @@ body {
     text-align: center;
     height:100%;
     padding: .5rem;
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;    
 
 }
 .sidebar , li {
@@ -26,8 +34,8 @@ a {
 }
 .sideBar li:hover{
     background-color:#3A3C49;
-      transform: scale(1.7);
-  transition: all 0.2s ease-in-out;
+    transform: scale(1.7);
+    transition: all 0.2s ease-in-out;
 }
 
 
@@ -41,10 +49,10 @@ a {
     padding:.7rem;
     }
 .search {
-        width: 40rem;
-        height: 1.5rem;  
-        text-align: center;
-        margin-left:auto;
+    width: 40rem;
+    height: 1.5rem;  
+    text-align: center;
+    margin-left:auto;
     }
 .addContact {
 margin-left:auto
@@ -73,6 +81,7 @@ margin-left:auto
 .modalClose {
     display:none;
 }
+/*modal end */
 .addform{
     width: 40%;
     height: 70%;
@@ -117,4 +126,18 @@ hr {
     top:0;
     right:0;
     font-size:3rem;
+}
+/* main contacts display */
+.contactDisplay {
+    display:flex;
+    flex-wrap:wrap;
+}
+.contactDisplayPush{
+    padding-left:15%;
+
+
+}
+.contactCard {
+    border:1px solid black;
+    padding:5%;
 }
