@@ -1,14 +1,14 @@
 import React from 'react';
 import ContactCard from './ContactCard';
 
-const ContactList = ({contacts}) =>{
-    /*const ContactList = ({contacts}) =>{
-        const push ={
-            paddingLeft: toggle? '15%':'0'
-        }*/
+const ContactList = ({contacts,toggle}) =>{
+    
+        const moved = {
+            paddingLeft: toggle? '0':'15%'
+        }
     console.log(contacts[0])
     return (
-        <div className = 'contactDisplay'>
+        <div className = 'contactDisplay' style={moved}>
         {contacts.map((user,i) =>{
             return (
                 <ContactCard 

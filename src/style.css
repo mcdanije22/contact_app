@@ -19,8 +19,8 @@ body {
     left: 0;
     background-color: #111;
     overflow-x: hidden;
-    transition: 0.5s;    
-
+    transition: 0.5s;  
+      
 }
 .sidebar , li {
     list-style: none;
@@ -131,6 +131,8 @@ hr {
 .contactDisplay {
     display:flex;
     flex-wrap:wrap;
+    margin:2%;
+    justify-content: center;
 }
 .contactDisplayPush{
     padding-left:15%;
@@ -138,6 +140,26 @@ hr {
 
 }
 .contactCard {
+    display:flex;
+    flex-direction:column;
+    text-align:center;
     border:1px solid black;
-    padding:5%;
+    height: 28rem;
+    width: 22rem;
+    margin-right:4rem;
+    margin-bottom:4rem;
+}
+.contactPhoto{
+    border-radius: 50%;
+}
+.cardTop{
+    padding-top:10%;
+}
+.cardBottom{
+    padding-top:5%;
+}
+.cardFooter{
+    background-color:silver;
+    height:3rem;
+    padding-top:1.1rem;
 }
