@@ -4,9 +4,10 @@ import ContactCard from './ContactCard';
 const ContactList = ({contacts,toggle}) =>{
     
         const moved = {
-            paddingLeft: toggle? '0':'15%'
+            //paddingLeft: toggle? '0':'15%'
+            justifyContent: toggle? 'center' :'flex-end'
         }
-    console.log(contacts[0])
+    //console.log(contacts[0])
     return (
         <div className = 'contactDisplay' style={moved}>
         {contacts.map((user,i) =>{
@@ -17,7 +18,7 @@ const ContactList = ({contacts,toggle}) =>{
                 last={contacts[i].last} 
                 email={contacts[i].email} 
                 number={contacts[i].number} 
-                notes={contacts[i].notes} />
+                area={contacts[i].area} />
             );
         })
         }
