@@ -18,7 +18,12 @@ const ContactList = ({contacts,toggle}) =>{
                 last={contacts[i].last} 
                 email={contacts[i].email} 
                 number={contacts[i].number} 
-                area={contacts[i].area} />
+                area={contacts[i].area} 
+                instagram={contacts[i].instagram}
+                facebook={contacts[i].facebook}
+                linkedin={contacts[i].linkedin}
+                twitter={contacts[i].twitter}
+                />
             );
         })
         }

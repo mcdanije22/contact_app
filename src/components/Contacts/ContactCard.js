@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-const ContactCard = ({first,last,number,email,area}) =>{
+const ContactCard = ({first,last,number,email,area,instagram,facebook,linkedin,twitter}) =>{
     
     return (
         <div className='contactCard'>
@@ -16,10 +16,10 @@ const ContactCard = ({first,last,number,email,area}) =>{
                     <p>Location: {area}</p>
                 </div>
                 <footer className='cardFooter'> 
-                    <button>S</button>
-                    <button>S</button>
-                    <button>S</button>
-                    <button>S</button>
+                    <button><a href= {instagram} target="_blank">S</a></button>
+                    <button><a href= {facebook} target="_blank">S</a></button>
+                    <button><a href= {linkedin} target="_blank">S</a></button>
+                    <button><a href= {twitter} target="_blank">S</a></button>
                 </footer>
             </div>
        

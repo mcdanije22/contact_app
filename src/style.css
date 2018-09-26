@@ -98,7 +98,6 @@ margin-left:auto
     
 }
 .bottom{
-    margin-top:20%;
     bottom: 0;
     height:13%;
     background-color: #DCDCDC;
@@ -119,6 +118,7 @@ hr {
     border-radius: 1rem;    
 }
 .bodyform {
+   
     margin:5%;
 }
 .close{

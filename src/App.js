@@ -9,7 +9,7 @@ class App extends Component {
     super(props);
     this.state = {
       contacts: [
-        {first:'Josh',last:'McDaniel',number:'555-666-7777',email:'joshmcdaniel@gmail.com',area:'Mount Morris, Ny'},
+        {first:'Josh',last:'McDaniel',number:'555-666-7777',email:'joshmcdaniel@gmail.com',area:'Mount Morris, Ny',instagram:'https://www.instagram.com/mcdanije/', facebook:'https://www.facebook.com/josh.mcdaniel.5201', linkedin:'https://www.linkedin.com/in/mcdanije/',twitter:'https://twitter.com/'},
         {first:'Briana',last:'McDaniel',number:'888-999-1111',email:'brianamcdaniel@gmail.com',area:'Mount Morris, Ny'},
         {first:'Finn',last:'McDaniel',number:'222-333-4444',email:'finnmcdaniel@gmail.com',area:'Mount Morris, Ny'},
         {first:'Josh',last:'McDaniel',number:'555-666-7777',email:'joshmcdaniel@gmail.com',area:'Mount Morris, Ny'},
@@ -23,7 +23,11 @@ class App extends Component {
         last: '',
         number: '',
         email:'',
-        area:'' 
+        area:'',
+        instagram: '',
+        facebook: '',
+        linkedin:'',
+        twitter:''
             }
     }
   
@@ -65,14 +69,20 @@ locationChange = (event) => {
   this.setState({area:event.target.value})
   console.log(this.state.area)
 }
-
+instagramChange = (event) => {
+  this.setState({instagram:event.target.value})
+}
 submitData = (event) => {
  let newContact = {
     first:this.state.first,
     last:this.state.last,
     number:this.state.number,
     email:this.state.email,
-    area:this.state.area
+    area:this.state.area,
+    instagram:this.state.instagram,
+    facebook:this.state.facebook,
+    linkedin:this.state.linkedin,
+    twitter:this.state.twitter
   }
 /*console.log(this.state.first)
 console.log(this.state.last)*/
@@ -94,6 +104,10 @@ event.preventDefault();
         numberChange={this.numberChange}
         emailChange = {this.emailChange}
         locationChange = {this.locationChange}
+        instagramChange = {this.instagramChange}
+        facebookChange = {this.facebookChange}
+        linkedinChange = {this.linkedinChange}
+        twitterChange = {this.twitterChange}
         />
         <ContactList contacts={this.state.contacts} toggle={this.state.toggle} />
       </div>
