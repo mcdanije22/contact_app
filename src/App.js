@@ -3,11 +3,20 @@ import NavBar from './components/Menu/NavBar';
 import SideBar from './components/Menu/SideBar';
 import AddForm from './components/Menu/AddForm';
 import ContactList from './components/Contacts/ContactList';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+
+library.add(faBars)
+
+
+
 
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      
       contacts: [
         {first:'Josh',last:'McDaniel',number:'555-666-7777',email:'joshmcdaniel@gmail.com',area:'Mount Morris, Ny',instagram:'https://www.instagram.com/mcdanije/', facebook:'https://www.facebook.com/josh.mcdaniel.5201', linkedin:'https://www.linkedin.com/in/mcdanije/',twitter:'https://twitter.com/'},
         {first:'Briana',last:'McDaniel',number:'888-999-1111',email:'brianamcdaniel@gmail.com',area:'Mount Morris, Ny'},
@@ -73,6 +82,10 @@ instagramChange = (event) => {
   this.setState({instagram:event.target.value})
 }
 submitData = (event) => {
+    if (this.state.first==''||this.state.last==''||this.state.number==''||this.state.email==''||this.state.area==''){
+      alert('Please Fill In All Fields')
+      event.preventDefault();
+    }else {
  let newContact = {
     first:this.state.first,
     last:this.state.last,
@@ -84,12 +97,13 @@ submitData = (event) => {
     linkedin:this.state.linkedin,
     twitter:this.state.twitter
   }
-/*console.log(this.state.first)
-console.log(this.state.last)*/
+
+
 this.setState({contacts:this.state.contacts.concat([newContact])})
 console.log(this.state.contacts)
 this.setState({class:'modalClose'})
 event.preventDefault();
+    }
 }
   render() {
     return (
@@ -110,6 +124,7 @@ event.preventDefault();
         twitterChange = {this.twitterChange}
         />
         <ContactList contacts={this.state.contacts} toggle={this.state.toggle} />
+        <FontAwesomeIcon icon={faBars} />
       </div>
     );
   }

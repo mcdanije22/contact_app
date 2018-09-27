@@ -3,7 +3,7 @@ body {
     padding: 0;
     font-family: 'Roboto', sans-serif; 
     max-width:100vw;
-    
+
   }
 
 /* side bar */
@@ -118,7 +118,6 @@ hr {
     border-radius: 1rem;    
 }
 .bodyform {
-   
     margin:5%;
 }
 .close{
@@ -131,7 +130,7 @@ hr {
 .contactDisplay {
     display:flex;
     flex-wrap:wrap;
-    margin:2%;    
+    margin:2%;  
 }
 
 .contactCard {

@@ -7,7 +7,7 @@ const AddForm = ({showAdd, submitData,firstChange, lastChange, numberChange, ema
     return (
         <div className={showAdd} > 
           <form className='addform' onSubmit={submitData}>
-          <h1>Add Contact</h1> <button className = 'close'>X</button>
+          <h1>Add Contact</h1> <button type='button' className = 'close'>X</button>
           <hr></hr>
 
             <form className='bodyform'>
@@ -18,13 +18,13 @@ const AddForm = ({showAdd, submitData,firstChange, lastChange, numberChange, ema
               <br/>
               <input className= 'addinput' type='text' placeholder='Location' name='location' onChange={locationChange}/>
             <br/>
-            <h2>Add Social Media Link</h2>
+            <h2> Social Media</h2>
             <hr/>
-            <input className= 'addinput' type='text' placeholder='Instagram' name='instagram' onChange={instagramChange} />
-            <input className= 'addinput' type='text' placeholder='Facebook' name='facebook' onChange ={facebookChange}/>
+            <input className= 'addinput' type='text' placeholder='Instagram URL' name='instagram' onChange={instagramChange} />
+            <input className= 'addinput' type='text' placeholder='Facebook URL' name='facebook' onChange ={facebookChange}/>
             <br/>
-            <input className= 'addinput' type='text' placeholder='Linkedin' name='linkedin' onChange={linkedinChange}/>
-            <input className= 'addinput' type='text' placeholder='Twitter' name='twitter' onChange={twitterChange}/>
+            <input className= 'addinput' type='text' placeholder='Linkedin URL' name='linkedin' onChange={linkedinChange}/>
+            <input className= 'addinput' type='text' placeholder='Twitter URL' name='twitter' onChange={twitterChange}/>
 
               
               <br/>
