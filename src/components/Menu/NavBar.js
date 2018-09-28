@@ -1,13 +1,28 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 
-const NavBar = ({hideSide,modalToggle}) =>{
-    
+const NavBar = ({hideSide,modalToggle, toggle}) =>{
+    const hide = {
+        marginLeft: toggle?'15%':'0%',
+      } 
+     
     return (
         <div className ='nav' >
-            <button className = 'sideBarToggle' onClick = {hideSide} >=</button>
-            <input type= "text" placeholder='search by name' className='search'></input><button className='searchBtn'>T</button>
-            <button className = 'addContact' onClick={modalToggle} >+add new contact</button>
+                
+            <button className = 'sideBarToggle'  onClick = {hideSide} >
+            <FontAwesomeIcon icon={faBars} />
+            </button>
+            <input type= "text" placeholder='search by name' className='search'></input><button className='searchBtn'>
+            <FontAwesomeIcon icon={faSearch} />
+            </button>
+            <button className = 'addContact' onClick={modalToggle}> 
+            <FontAwesomeIcon icon={faUserPlus} />
+
+            </button>
             <button className='signOut'> sign out</button>
            
         </div>

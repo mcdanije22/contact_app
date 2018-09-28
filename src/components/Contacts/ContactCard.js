@@ -1,4 +1,10 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+
 
 
 const ContactCard = ({first,last,number,email,area,instagram,facebook,linkedin,twitter}) =>{
@@ -16,10 +22,18 @@ const ContactCard = ({first,last,number,email,area,instagram,facebook,linkedin,t
                     <p>Location: {area}</p>
                 </div>
                 <footer className='cardFooter'> 
-                    <button><a href= {instagram} target="_blank">S</a></button>
-                    <button><a href= {facebook} target="_blank">S</a></button>
-                    <button><a href= {linkedin} target="_blank">S</a></button>
-                    <button><a href= {twitter} target="_blank">S</a></button>
+                    <button type='button' className='instagram'><a href= {instagram} target="_blank">
+                    <FontAwesomeIcon icon={faInstagram} />
+                    </a></button>
+                    <button type='button' className='facebook'><a href= {facebook} target="_blank">
+                    <FontAwesomeIcon icon={faFacebookF} />
+                    </a></button>
+                    <button type='button' className='linkedin'><a href= {linkedin} target="_blank">
+                    <FontAwesomeIcon icon={faLinkedinIn} />
+                    </a></button>
+                    <button type='button' className='twitter'><a href= {twitter} target="_blank">
+                    <FontAwesomeIcon icon={faTwitter} />
+                    </a></button>
                 </footer>
             </div>
        
