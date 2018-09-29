@@ -6,9 +6,6 @@ import { faUserPlus } from '@fortawesome/free-solid-svg-icons';
 
 
 const NavBar = ({hideSide,modalToggle, toggle}) =>{
-    const hide = {
-        marginLeft: toggle?'15%':'0%',
-      } 
      
     return (
         <div className ='nav' >

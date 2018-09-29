@@ -3,8 +3,7 @@ import NavBar from './components/Menu/NavBar';
 import SideBar from './components/Menu/SideBar';
 import AddForm from './components/Menu/AddForm';
 import ContactList from './components/Contacts/ContactList';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 
 
@@ -38,7 +37,7 @@ class App extends Component {
             }
     }
   
-
+  //functions for sidebar start//
   hideSide = () =>{
     if(this.state.toggle){
     this.setState(        
@@ -46,21 +45,26 @@ class App extends Component {
     )}
     else{
         this.setState({toggle:true})
-    }
-    //test state change
-    //console.log(this.state.toggle)     
+    } 
 }
-onclick = (event) =>{
+onclick = () =>{
   this.setState({toggle:false})
 }
+  //functions for sidebar end//
+
+  //functions for modal start//
 addModalToggle = () => {
    this.setState({class:'modal'})
 }
+closeModalToggle = () =>{
+  this.setState({class:'modalClose'})
+}
+  //functions for modal start//
+
+  //functions that capture form data start//
 firstChange = (event) => {
-  //let first = event.target.value
   this.setState({first:event.target.value})
   console.log(this.state.first)
-  //console.log(first)
 }
 lastChange = (event) => {
   this.setState({last:event.target.value})
@@ -81,6 +85,9 @@ locationChange = (event) => {
 instagramChange = (event) => {
   this.setState({instagram:event.target.value})
 }
+  //functions that capture form data end//
+
+  //logic for adding contact object to state start//
 submitData = (event) => {
     if (this.state.first==''||this.state.last==''||this.state.number==''||this.state.email==''||this.state.area==''){
       alert('Please Fill In All Fields')
@@ -105,12 +112,29 @@ this.setState({class:'modalClose'})
 event.preventDefault();
     }
 }
+  //logic for adding contact object to state end//
+
+  clearBtn = () =>{
+    this.setState({
+      first: '',
+      last: '',
+      number: '',
+      email:'',
+      area:'',
+      instagram: '',
+      facebook: '',
+      linkedin:'',
+      twitter:''
+})
+  }
   render() {
     return (
       <div className='container'>
         <NavBar hideSide={this.hideSide} modalToggle={this.addModalToggle} toggle={this.state.toggle}/>
         <SideBar  toggle={this.state.toggle} />
         <AddForm  
+        clear={this.clearBtn}
+        closeModal={this.closeModalToggle}
         showAdd={this.state.class} 
         submitData={this.submitData} 
         firstChange={this.firstChange} 

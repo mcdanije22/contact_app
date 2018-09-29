@@ -23,7 +23,6 @@ body {
     position: fixed;
     z-index: 1;
     left: 0;
-    top:0;
     overflow-x: hidden;
     transition: 0.5s; 
       
@@ -62,7 +61,7 @@ a {
     }
 /*margin issues*/
 .sideBarToggle{
-    margin-left:15%;
+
     }
 .search {
     width: 40rem;
@@ -94,6 +93,7 @@ margin-left:auto
     overflow-X: hidden;
     overflow-Y: auto;
 }
+
 .modalClose {
     display:none;
 }
@@ -136,11 +136,19 @@ hr {
 .bodyform {
     margin:5%;
 }
+
+.addHeader{
+    display:flex;
+    justify-content: flex-end;
+}
 .close{
-    position: fixed;
+    /*position: fixed;
     top:0;
-    right:0;
+    right:0;*/
     font-size:3rem;
+    border:none;
+    margin-left:22%;
+    margin-right:5%;
 }
 /* main contacts display */
 .contactDisplay {

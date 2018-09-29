@@ -1,16 +1,26 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-const AddForm = ({showAdd, submitData,firstChange, lastChange, numberChange, emailChange, locationChange,instagramChange,facebookChange,linkedinChange,twitterChange}) =>{
 
+const AddForm = ({showAdd, submitData,closeModal,firstChange, lastChange, numberChange, emailChange, locationChange,instagramChange,facebookChange,linkedinChange,twitterChange}) =>{
+
+ const clearForm = () =>{
+  document.getElementById("form").reset();
+ }
  
     
     return (
         <div className={showAdd} > 
           <form className='addform' onSubmit={submitData}>
-          <h1>Add Contact</h1> <button type='button' className = 'close'>X</button>
+          <div className='addHeader'>
+          <h1>Add Contact</h1> <button className='closeBtn' type='button' className = 'close' onClick={closeModal}>
+          <FontAwesomeIcon icon={faTimes} />
+          </button>
+          </div>
           <hr></hr>
 
-            <form className='bodyform'>
+            <form className='bodyform' id='form'>
               <input className= 'addinput' type='text' placeholder='First Name' name='First' onChange={firstChange}/>
               <input className= 'addinput' type='text' placeholder='Last Name' name='last' onChange={lastChange}/>              
               <input className= 'addinput' type='text' placeholder='Phone Number' name='number' onChange={numberChange}/>
@@ -31,7 +41,7 @@ const AddForm = ({showAdd, submitData,firstChange, lastChange, numberChange, ema
               </form> 
 
               <footer className='bottom'>
-              <button className='clear' type='reset'>clear</button>
+              <button className='clear' type='reset' onClick={clearForm}>clear</button>
               <button type='submit' className='submit' >Add</button>
               </footer>
           </form>
