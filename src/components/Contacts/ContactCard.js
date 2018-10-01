@@ -7,7 +7,7 @@ import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 
 
 
-const ContactCard = ({first,last,number,email,area,instagram,facebook,linkedin,twitter}) =>{
+const ContactCard = ({first,last,number,email,area,instagram,facebook,linkedin,twitter,filteredContacts}) =>{
     
     return (
         <div className='contactCard'>

@@ -24,7 +24,8 @@ class App extends Component {
       ],
         toggle:true,
         class: 'modalClose', 
-
+        searchField:'',
+        
         first: '',
         last: '',
         number: '',
@@ -107,30 +108,30 @@ submitData = (event) => {
 
 
 this.setState({contacts:this.state.contacts.concat([newContact])})
-console.log(this.state.contacts)
+  document.getElementById("form").reset();
 this.setState({class:'modalClose'})
 event.preventDefault();
     }
 }
   //logic for adding contact object to state end//
 
-  clearBtn = () =>{
-    this.setState({
-      first: '',
-      last: '',
-      number: '',
-      email:'',
-      area:'',
-      instagram: '',
-      facebook: '',
-      linkedin:'',
-      twitter:''
-})
+  searchFieldChange = (event) => {
+    this.setState({searchField:event.target.value})
   }
+
   render() {
+    const {contacts, searchField} = this.state;
+    const filteredContacts =contacts.filter(contacts =>{
+      return contacts.first/* this is for side bar letters [0]*/.toLowerCase().includes(searchField.toLowerCase());
+    })
     return (
       <div className='container'>
-        <NavBar hideSide={this.hideSide} modalToggle={this.addModalToggle} toggle={this.state.toggle}/>
+        <NavBar         
+        modalToggle={this.addModalToggle} 
+        hideSide={this.hideSide} 
+        toggle={this.state.toggle}
+        search={this.searchFieldChange}
+        />
         <SideBar  toggle={this.state.toggle} />
         <AddForm  
         clear={this.clearBtn}
@@ -147,7 +148,10 @@ event.preventDefault();
         linkedinChange = {this.linkedinChange}
         twitterChange = {this.twitterChange}
         />
-        <ContactList contacts={this.state.contacts} toggle={this.state.toggle} />
+        <ContactList 
+        contacts={filteredContacts} 
+        toggle={this.state.toggle} 
+        />
       </div>
     );
   }
