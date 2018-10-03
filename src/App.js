@@ -38,20 +38,7 @@ class App extends Component {
             }
     }
   
-  //functions for sidebar start//
-  hideSide = () =>{
-    if(this.state.toggle){
-    this.setState(        
-        {toggle:false}
-    )}
-    else{
-        this.setState({toggle:true})
-    } 
-}
-onclick = () =>{
-  this.setState({toggle:false})
-}
-  //functions for sidebar end//
+
 
   //functions for modal start//
 addModalToggle = () => {
@@ -128,11 +115,8 @@ event.preventDefault();
       <div className='container'>
         <NavBar         
         modalToggle={this.addModalToggle} 
-        hideSide={this.hideSide} 
-        toggle={this.state.toggle}
         search={this.searchFieldChange}
         />
-        <SideBar  toggle={this.state.toggle} />
         <AddForm  
         clear={this.clearBtn}
         closeModal={this.closeModalToggle}
@@ -150,7 +134,6 @@ event.preventDefault();
         />
         <ContactList 
         contacts={filteredContacts} 
-        toggle={this.state.toggle} 
         />
       </div>
     );

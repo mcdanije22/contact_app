@@ -1,13 +1,11 @@
 import React from 'react';
 import ContactCard from './ContactCard';
 
-const ContactList = ({contacts,toggle}) =>{
+const ContactList = ({contacts}) =>{
     
-        const moved = {
-            justifyContent: toggle? 'center' :'flex-end'
-        }
+       
     return (
-        <div className = 'contactDisplay' style={moved}>
+        <div className = 'contactDisplay' >
         {contacts.map((user,i) =>{
             return (
                 <ContactCard 
