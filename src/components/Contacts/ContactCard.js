@@ -4,16 +4,17 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons';
 import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const ContactCard = ({first,last,number,email,area,instagram,facebook,linkedin,twitter,filteredContacts}) =>{
+const ContactCard = ({key,first,last,number,email,area,instagram,facebook,linkedin,twitter}) =>{
     
     return (
         <div className='contactCard'>
             <div className='cardTop'>
-                <img className='contactPhoto' src= 'https://via.placeholder.com/130x130' alt='person'/>
-                <h2>{first} {last}</h2>
+               <img className='contactPhoto' src= 'https://via.placeholder.com/130x130' alt='person'/> 
+                <h2>{first} {last} <button className='editBtn'><FontAwesomeIcon icon={faPencilAlt} /> </button></h2> 
                 <hr/>
             </div>
                 <div className= 'cardBottom'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import ContactCard from './ContactCard';
 
-const ContactList = ({contacts}) =>{
+const ContactList = ({contacts,}) =>{
     
        
     return (

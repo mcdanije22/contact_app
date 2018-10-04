@@ -174,7 +174,7 @@ hr {
     border-top: 2px solid black;
     background-color:silver;
     height:3rem;
-    padding-top:.75rem;
+    padding-top:.65rem;
 }
 .instagram, .facebook,.linkedin, .twitter {
     border:none;  
@@ -184,3 +184,7 @@ hr {
 a:visited {
     color: black;
   }
+.editBtn{
+    border:none;
+    font-size:.8rem;
+}

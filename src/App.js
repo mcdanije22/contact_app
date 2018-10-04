@@ -25,7 +25,7 @@ class App extends Component {
         toggle:true,
         class: 'modalClose', 
         searchField:'',
-        
+
         first: '',
         last: '',
         number: '',
