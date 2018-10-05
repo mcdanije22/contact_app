@@ -157,6 +157,8 @@ hr {
     margin: 0 2rem 3rem 2rem;
     border: 2px solid black;
     display: inline-block;
+    box-shadow: 5px 10px #888888;
+    
 }
 .contactPhoto{
     border-radius: 50%;
@@ -174,7 +176,7 @@ hr {
     border-top: 2px solid black;
     background-color:silver;
     height:3rem;
-    padding-top:.65rem;
+    padding-top:3.2%;
 }
 .instagram, .facebook,.linkedin, .twitter {
     border:none;  
@@ -187,4 +189,5 @@ a:visited {
 .editBtn{
     border:none;
     font-size:.8rem;
+    background-color:white;
 }
