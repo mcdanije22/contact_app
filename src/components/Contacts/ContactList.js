@@ -1,15 +1,17 @@
 import React from 'react';
 import ContactCard from './ContactCard';
 
-const ContactList = ({contacts,}) =>{
-    
+const ContactList = ({contacts,removeContacts}) =>{
+ 
        
     return (
         <div className = 'contactDisplay' >
-        {contacts.map((user,i) =>{
+        
+        {contacts.map((contact,i) =>{
             return (
                 <ContactCard 
                 key={i} 
+                id={i}
                 first={contacts[i].first} 
                 last={contacts[i].last} 
                 email={contacts[i].email} 
@@ -19,6 +21,7 @@ const ContactList = ({contacts,}) =>{
                 facebook={contacts[i].facebook}
                 linkedin={contacts[i].linkedin}
                 twitter={contacts[i].twitter}
+                removeContacts={removeContacts}
                 />
             );
         })

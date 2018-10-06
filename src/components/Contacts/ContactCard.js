@@ -5,20 +5,21 @@ import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
 
-const ContactCard = ({key,first,last,number,email,area,instagram,facebook,linkedin,twitter}) =>{
+const ContactCard = ({removeContacts,first,last,number,email,area,instagram,facebook,linkedin,twitter}) =>{
     
     return (
         <div className='contactCard'>
             <div className='cardTop'>
                <img className='contactPhoto' src= 'https://via.placeholder.com/130x130' alt='person'/> 
-                <h2>{first} {last} <button className='editBtn'><FontAwesomeIcon icon={faPencilAlt} /> </button></h2> 
+                <h2>{first} {last} <button className='editBtn'><FontAwesomeIcon icon={faPencilAlt} /> </button><button className='editBtn' onClick={removeContacts}><FontAwesomeIcon icon={faTrashAlt} /></button></h2> 
                 <hr/>
             </div>
                 <div className= 'cardBottom'>
-                    <p>Phone Number: {number}</p>
+                    <p>Phone Number: {number} </p>
                     <p>Email Address: {email}</p>
                     <p>Location: {area}</p>
                 </div>

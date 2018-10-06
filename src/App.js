@@ -106,6 +106,24 @@ event.preventDefault();
     this.setState({searchField:event.target.value})
   }
 
+  /*removeContacts = (event) => {
+    let array = this.state.contacts; 
+    let index = array.indexOf(event.target.value)
+    array.splice(index,1);
+    this.setState({contacts: array});
+  }*/
+
+  /*removeContacts = (id) =>{
+    this.setState({
+      contacts:this.state.contacts.filter((contacts,id)=> contacts.id != id)
+    })
+  }  */
+  removeContacts = (i) => {
+    let contacts = this.state.contacts; 
+    contacts.splice(i,1);
+    this.setState({contacts: contacts});
+  }
+
   render() {
     const {contacts, searchField} = this.state;
     const filteredContacts =contacts.filter(contacts =>{
@@ -134,6 +152,7 @@ event.preventDefault();
         />
         <ContactList 
         contacts={filteredContacts} 
+        removeContacts={this.removeContacts}
         />
       </div>
     );
