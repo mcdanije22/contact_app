@@ -97,6 +97,17 @@ submitData = (event) => {
 this.setState({contacts:this.state.contacts.concat([newContact])})
   document.getElementById("form").reset();
 this.setState({class:'modalClose'})
+this.setState({
+  first:'',
+  last:'',
+  number:'',
+  email:'',
+  area:'',
+  instagram:'',
+  facebook:'',
+  linkedin:'',
+  twitter:''
+})
 event.preventDefault();
     }
 }
