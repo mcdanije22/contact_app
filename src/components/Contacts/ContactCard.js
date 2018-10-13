@@ -8,14 +8,14 @@ import { faPencilAlt } from '@fortawesome/free-solid-svg-icons';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 
+const ContactCard = ({removeContacts,contacts}) =>{
+    const {first,last,number,email,area,instagram,facebook,linkedin,twitter} = contacts;
 
-const ContactCard = ({removeContacts,first,last,number,email,area,instagram,facebook,linkedin,twitter}) =>{
-    
     return (
         <div className='contactCard'>
             <div className='cardTop'>
                <img className='contactPhoto' src= 'https://via.placeholder.com/130x130' alt='person'/> 
-                <h2>{first} {last} <button className='editBtn'><FontAwesomeIcon icon={faPencilAlt} /> </button><button className='editBtn' onClick={removeContacts}><FontAwesomeIcon icon={faTrashAlt} /></button></h2> 
+                <h2>{first} {last} <button className='editBtn'><FontAwesomeIcon icon={faPencilAlt} /> </button><button className='editBtn' onClick={ removeContacts }><FontAwesomeIcon icon={faTrashAlt} /></button></h2> 
                 <hr/>
             </div>
                 <div className= 'cardBottom'>

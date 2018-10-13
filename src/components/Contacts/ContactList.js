@@ -10,7 +10,7 @@ const ContactList = ({contacts,removeContacts}) =>{
         {contacts.map((contact,i) =>{
             return (
                 <ContactCard 
-                key={i} 
+                /*key={i} 
                 id={i}
                 first={contacts[i].first} 
                 last={contacts[i].last} 
@@ -20,7 +20,8 @@ const ContactList = ({contacts,removeContacts}) =>{
                 instagram={contacts[i].instagram}
                 facebook={contacts[i].facebook}
                 linkedin={contacts[i].linkedin}
-                twitter={contacts[i].twitter}
+                twitter={contacts[i].twitter}*/
+                contacts={contacts[i]}
                 removeContacts={removeContacts}
                 />
             );
