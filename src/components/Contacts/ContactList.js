@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactCard from './ContactCard';
 
+
 const ContactList = ({contacts,removeContacts}) =>{
  
        
@@ -21,8 +22,9 @@ const ContactList = ({contacts,removeContacts}) =>{
                 facebook={contacts[i].facebook}
                 linkedin={contacts[i].linkedin}
                 twitter={contacts[i].twitter}*/
+                id={i}
                 contacts={contacts[i]}
-                removeContacts={removeContacts}
+                removeContacts={ () => removeContacts(contact.id)}
                 />
             );
         })

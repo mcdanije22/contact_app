@@ -129,18 +129,35 @@ event.preventDefault();
       contacts:this.state.contacts.filter((contacts,id)=> contacts.id != id)
     })
   }  */
-  removeContacts = (id) => {
+
+  /*removeContacts  (index){
+    let contacts = this.state.contacts;
+    let contact =contacts.find( function(contact) {
+      return contact.counter === index
+    });
+    contacts.splice(contact,1);
+    this.setState({contacts:contacts})
+  }*/
+
+  /*removeContacts = (id) => {
     let contacts = this.state.contacts; 
     contacts.splice(id,1);
     this.setState({contacts: contacts});
-  }
+  }*/
 
 
+//why not working?//
+removeContacts = (id) => {
+  const { contacts } = this.state;
+  const newContacts = contacts.filter(contact => contact.id !== id);
+  this.setState({ contacts: newContacts });
+  console.log
+}
 
   render() {
     const {contacts, searchField} = this.state;
     const filteredContacts =contacts.filter(contacts =>{
-      return contacts.first/* this is for side bar letters [0]*/.toLowerCase().includes(searchField.toLowerCase());
+      return contacts.first.toLowerCase().includes(searchField.toLowerCase());
     })
     return (
       <div className='container'>
