@@ -24,7 +24,7 @@ const ContactList = ({contacts,removeContacts}) =>{
                 twitter={contacts[i].twitter}*/
                 id={i}
                 contacts={contacts[i]}
-                removeContacts={ () => removeContacts(contact.id)}
+                removeContacts={ removeContacts.bind(this,i) /*() => removeContacts(contact.id)*/}
                 />
             );
         })

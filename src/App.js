@@ -117,13 +117,7 @@ event.preventDefault();
     this.setState({searchField:event.target.value})
   }
 
-  /*removeContacts = (event) => {
-    let array = this.state.contacts; 
-    let index = array.indexOf(event.target.value)
-    array.splice(index,1);
-    this.setState({contacts: array});
-  }*/
-
+ 
   /*removeContacts = (id) =>{
     this.setState({
       contacts:this.state.contacts.filter((contacts,id)=> contacts.id != id)
@@ -139,20 +133,28 @@ event.preventDefault();
     this.setState({contacts:contacts})
   }*/
 
-  /*removeContacts = (id) => {
-    let contacts = this.state.contacts; 
-    contacts.splice(id,1);
+  /*removeContacts = (i) => {
+    let contacts = Object.assign([], this.state.contacts); 
+    contacts.splice(i,1);
     this.setState({contacts: contacts});
   }*/
 
 
+  removeContacts = (i) => {
+    const contacts = this.state.contacts;
+    this.state.contacts.splice(i, 1);
+    this.setState({contacts: contacts});
+  }
+
+
+
 //why not working?//
-removeContacts = (id) => {
+/*removeContacts = (id) => {
   const { contacts } = this.state;
   const newContacts = contacts.filter(contact => contact.id !== id);
   this.setState({ contacts: newContacts });
   console.log
-}
+}*/
 
   render() {
     const {contacts, searchField} = this.state;
