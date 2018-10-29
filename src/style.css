@@ -82,6 +82,7 @@ a {
     animation: show .5s ease;
     overflow-X: hidden;
     overflow-Y: auto;
+    
 }
 
 .modalClose {

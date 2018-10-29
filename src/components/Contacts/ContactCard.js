@@ -11,6 +11,13 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 const ContactCard = ({removeContacts,contacts}) =>{
     const {first,last,number,email,area,instagram,facebook,linkedin,twitter} = contacts;
 
+    const insta = instagram.value;
+
+    const hide = {
+        display: insta?'block':'none'
+      }
+
+
     return (
         <div className='contactCard'>
             <div className='cardTop'>
@@ -24,7 +31,7 @@ const ContactCard = ({removeContacts,contacts}) =>{
                     <p>Location: {area}</p>
                 </div>
                 <footer className='cardFooter'> 
-                    <button type='button' className='instagram'><a href= {instagram} target="_blank">
+                    <button style={hide} type='button' className='instagram'><a href= {instagram} target="_blank" >
                     <FontAwesomeIcon icon={faInstagram} />
                     </a></button>
                     <button type='button' className='facebook'><a href= {facebook} target="_blank">
