@@ -12,6 +12,7 @@ const ContactCard = ({removeContacts,contacts}) =>{
     const {first,last,number,email,area,instagram,facebook,linkedin,twitter} = contacts;
 
     const insta = instagram.value;
+    console.log(insta);
 
     const hide = {
         display: insta?'block':'none'
@@ -31,7 +32,7 @@ const ContactCard = ({removeContacts,contacts}) =>{
                     <p>Location: {area}</p>
                 </div>
                 <footer className='cardFooter'> 
-                    <button style={hide} type='button' className='instagram'><a href= {instagram} target="_blank" >
+                    <button /*style={hide}*/ type='button' className='instagram'><a href= {instagram} target="_blank" >
                     <FontAwesomeIcon icon={faInstagram} />
                     </a></button>
                     <button type='button' className='facebook'><a href= {facebook} target="_blank">

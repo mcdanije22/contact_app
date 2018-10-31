@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NavBar from './components/Menu/NavBar';
-import SideBar from './components/Menu/SideBar';
 import AddForm from './components/Menu/AddForm';
 import ContactList from './components/Contacts/ContactList';
 
@@ -77,10 +76,12 @@ instagramChange = (event) => {
 
   //logic for adding contact object to state start//
 submitData = (event) => {
+  //check to make sure inputs have text
     if (this.state.first==''||this.state.last==''||this.state.number==''||this.state.email==''||this.state.area==''){
       alert('Please Fill In All Fields')
       event.preventDefault();
     }else {
+  //make new object from form 
  let newContact = {
     first:this.state.first,
     last:this.state.last,
@@ -93,10 +94,12 @@ submitData = (event) => {
     twitter:this.state.twitter
   }
 
-
+//add new contact oject to current contact state 
 this.setState({contacts:this.state.contacts.concat([newContact])})
   document.getElementById("form").reset();
+//closes add form model
 this.setState({class:'modalClose'})
+//clears add form modal data
 this.setState({
   first:'',
   last:'',
@@ -117,46 +120,17 @@ event.preventDefault();
     this.setState({searchField:event.target.value})
   }
 
- 
-  /*removeContacts = (id) =>{
-    this.setState({
-      contacts:this.state.contacts.filter((contacts,id)=> contacts.id != id)
-    })
-  }  */
+  
 
-  /*removeContacts  (index){
-    let contacts = this.state.contacts;
-    let contact =contacts.find( function(contact) {
-      return contact.counter === index
-    });
-    contacts.splice(contact,1);
-    this.setState({contacts:contacts})
-  }*/
-
-  /*removeContacts = (i) => {
-    let contacts = Object.assign([], this.state.contacts); 
-    contacts.splice(i,1);
-    this.setState({contacts: contacts});
-  }*/
-
-
+  // delete contact card, had to bind this and i 
   removeContacts = (i) => {
     const contacts = this.state.contacts;
     this.state.contacts.splice(i, 1);
     this.setState({contacts: contacts});
   }
 
-
-
-//why not working?//
-/*removeContacts = (id) => {
-  const { contacts } = this.state;
-  const newContacts = contacts.filter(contact => contact.id !== id);
-  this.setState({ contacts: newContacts });
-  console.log
-}*/
-
   render() {
+    //logic to filter contacts by search. sends filtered list to contact component
     const {contacts, searchField} = this.state;
     const filteredContacts =contacts.filter(contacts =>{
       return contacts.first.toLowerCase().includes(searchField.toLowerCase());

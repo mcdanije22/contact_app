@@ -22,6 +22,7 @@ const ContactList = ({contacts,removeContacts}) =>{
                 facebook={contacts[i].facebook}
                 linkedin={contacts[i].linkedin}
                 twitter={contacts[i].twitter}*/
+                key={i}
                 id={i}
                 contacts={contacts[i]}
                 removeContacts={ removeContacts.bind(this,i) /*() => removeContacts(contact.id)*/}
